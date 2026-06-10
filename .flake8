@@ -1,0 +1,4 @@
+[flake8]
+exclude = .git,venv, .venv,__pycache__, catalog/migrations/
+
+max-line-length = 119
