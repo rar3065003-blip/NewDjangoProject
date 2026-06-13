@@ -22,3 +22,11 @@ class Product(models.Model):
     def __str__(self):
         return self.name
 
+class Contacts(models.Model):
+
+    name = models.CharField(max_length = 100)
+    phone = models.CharField(max_length = 20)
+    email = models.CharField(max_length = 30)
+
+    def __str__(self):
+        return self.name

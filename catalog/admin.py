@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Category, Product
+from .models import Category, Product, Contacts
 
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
@@ -11,4 +11,6 @@ class ProductAdmin(admin.ModelAdmin):
     list_filter = ('category',)
     search_fields = ('name', 'description')
 
-
+@admin.register(Contacts)
+class ContactsAdmin(admin.ModelAdmin):
+    list_display = ('id', 'name', 'phone', 'email')
