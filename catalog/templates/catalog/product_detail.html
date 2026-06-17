@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ object.name }}</title>
+</head>
+<body>
+    <a href="/">Назад в каталог</a>
+    <hr>
+
+    <h1>{{ object.name }}</h1>
+
+    {% if object.image %}
+        <img src="{{ object.image.url }}" alt="{{ object.name }}" style="max-width: 300px;">
+    {% endif %}
+
+    <p><strong>Категория:</strong> {{ object.category.name }}</p>
+
+    <p><strong>Цена:</strong> {{ object.price }} руб.</p>
+
+    <p><strong>Описание:</strong></p>
+    <p>{{ object.description }}</p>
+
+    <hr>
+    <p>Дата добавления: {{ object.created_at|date:"d.m.Y" }}</p>
+</body>
+</html>

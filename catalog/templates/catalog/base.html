@@ -1,0 +1,20 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8"> <!-- Защита от кракозябр на самом верху! -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{% static 'catalog/css/bootstrap.min.css' %}" rel="stylesheet">
+    <title>{% block title %}Мой Магазин{% endblock %}</title>
+</head>
+<body class="container mt-4">
+
+    <!-- Подключаем наше меню -->
+    {% include "catalog/includes/menu.html" %}
+
+    <!-- Окно для контента дочерних страниц -->
+    {% block content %}
+    {% endblock %}
+
+</body>
+</html>
