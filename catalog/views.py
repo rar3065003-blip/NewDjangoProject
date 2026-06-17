@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404
 from catalog.models import Product
 
 def home_view(request):
-    latest_products = Product.objects.order_by('-created_at')[:5]
+    latest_products = Product.objects.all()
     print(latest_products)
     context = {'products': latest_products}
     return render(request, "catalog/home.html", context)
