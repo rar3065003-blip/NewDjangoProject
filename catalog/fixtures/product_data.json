@@ -3,12 +3,12 @@
     "model": "catalog.product",
     "pk": 2,
     "fields": {
-        "name": "═юєЄсєъ",
-        "description": "═ют√щ ЄхёЄ",
-        "image": "",
+        "name": "Пиво легкое",
+        "description": "Легкое пиво",
+        "image": "products/deer_sky.webp",
         "price": "95000.00",
         "created_at": "2026-06-13T01:56:06.938Z",
-        "updated_at": "2026-06-13T01:56:06.938Z",
+        "updated_at": "2026-06-17T01:54:59.673Z",
         "category": 1
     }
 }

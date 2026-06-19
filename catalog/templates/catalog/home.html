@@ -6,11 +6,6 @@
     <h1 class="display-4 text-primary">
         Привет, это главная страница!
     </h1>
-    <h4 class="display-5 text-secondary mb-4">
-        Somewone text maybe need to be here,
-        but i forget english language
-    </h4>
-
     <hr>
 
     <h2 class="mb-3">Последние поступления товаров</h2>
@@ -23,7 +18,7 @@
                         <h5 class="card-title text-success">{{ product.name }}</h5>
                         <h6 class="card-subtitle mb-2 text-muted">Цена: {{ product.price }} руб.</h6>
                         <p class="card-text">{{ product.description|truncatechars:100 }}</p>
-                        <a href="/product/{{ product.id }}/" class="btn btn-primary btn-sm">Подробнее</a>
+                        <a href="{%url 'product_detail' product.id %}" class="btn btn-primary btn-sm">Подробнее</a>
                     </div>
                 </div>
             </div>
