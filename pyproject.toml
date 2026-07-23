@@ -12,3 +12,28 @@ python = "^3.14"
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+
+[tool.mypy]
+plugins = ["mypy_django_plugin.main"]
+exclude = ["migrations/"]
+
+[tool.django-stubs]
+django_settings_module = "config.settings"
+
+[tool.black]
+line-length = 88
+target-version = ['py312']
+exclude = '''
+/(
+    \.git
+  | \.venv
+  | venv
+  | migrations
+)/
+'''
+
+[tool.isort]
+profile = "black"
+line_length = 88
+skip = ["migrations", ".venv", "venv"]
