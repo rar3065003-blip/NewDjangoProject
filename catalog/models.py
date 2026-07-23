@@ -1,8 +1,9 @@
 from django.db import models
 
+
 class Category(models.Model):
 
-    name = models.CharField(max_length = 100)
+    name = models.CharField(max_length=100)
 
     description = models.TextField()
 
@@ -10,14 +11,15 @@ class Category(models.Model):
         return self.name
 
     class Meta:
-        verbose_name = 'Категория'
-        verbose_name_plural = 'Категории'
+        verbose_name = "Категория"
+        verbose_name_plural = "Категории"
+
 
 class Product(models.Model):
 
-    name = models.CharField(max_length = 100)
+    name = models.CharField(max_length=100)
     description = models.TextField()
-    image = models.ImageField(upload_to='products/')
+    image = models.ImageField(upload_to="products/")
     price = models.DecimalField(max_digits=10, decimal_places=2)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
@@ -27,17 +29,19 @@ class Product(models.Model):
         return self.name
 
     class Meta:
-        verbose_name = 'Продукт'
-        verbose_name_plural = 'Продукты'
+        verbose_name = "Продукт"
+        verbose_name_plural = "Продукты"
+
 
 class Contacts(models.Model):
 
-    name = models.CharField(max_length = 100)
-    phone = models.CharField(max_length = 20)
-    email = models.CharField(max_length = 30)
+    name = models.CharField(max_length=100)
+    phone = models.CharField(max_length=20)
+    email = models.CharField(max_length=30)
 
     def __str__(self):
         return self.name
+
     class Meta:
-        verbose_name = 'Контакт'
-        verbose_name_plural = 'Контакты'
+        verbose_name = "Контакт"
+        verbose_name_plural = "Контакты"
