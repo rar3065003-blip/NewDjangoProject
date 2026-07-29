@@ -5,7 +5,7 @@ class Blog(models.Model):
 
     title = models.CharField(max_length=150)
     content = models.TextField()
-    image: models.ImageField | None = models.ImageField(
+    image = models.ImageField(
         upload_to="blog/", blank=True, null=True
     )
     create_at = models.DateTimeField(auto_now_add=True)
