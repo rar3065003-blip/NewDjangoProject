@@ -1,4 +1,4 @@
-from django.urls import reverse_lazy
+from django.urls import reverse, reverse_lazy
 from django.views.generic import (
     CreateView,
     DeleteView,
@@ -43,7 +43,7 @@ class BlogUpdateView(UpdateView):
     fields = ["title", "content", "image", "is_published"]
 
     def get_success_url(self):
-        return reverse_lazy("blog:blog_detail", kwargs={"pk": self.object.pk})
+        return reverse("blog:blog_detail", kwargs={"pk": self.object.pk})
 
 
 class BlogDeleteView(DeleteView):
