@@ -1,0 +1,27 @@
+{% extends 'catalog/base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="col-md-6 offset-md-3">
+        {% if object%}
+        <h2>Удаление продукта</h2>
+        {% else %}
+        <h2>Добавление / Редактирование продукта</h2>
+        {% endif %}
+
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {% if object %}
+            <h2>Вы уверены, что хотите удалить?</h2>
+            {% else %}
+            {{ form.as_p }}
+            {% endif %}
+            {% if object %}
+                <button type="submit" class="btn btn-danger mt-3">Удалить</button>
+            {% else %}
+                <button type="submit" class="btn btn-primary mt-3">Сохранить</button>
+            {% endif %}
+        </form>
+    </div>
+</div>
+{% endblock %}
